@@ -1,5 +1,5 @@
 # System Commands
-sudo -i : Switches to the root user
+sudo -i : Switches to the root user (or) sudo su -
 exit : Logs out of current user
 uname : Shows OS type
 uname -r : Displays kernel version
