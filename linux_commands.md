@@ -5,8 +5,9 @@ uname : Shows OS type
 uname -r : Displays kernel version
 uname -a : Shows complete OS info
 clear: Clears the terminal screen (or) ctrl + l
-uptime : Displays how long the system is running
-uptime -p : Shows uptime in readable format
+uptime : Displays details of how long the system is up
+uptime -s : Shows the exact time and date system started
+uptime -p : Shows uptime duration in readable format
 hostname: Displays system's private DNS name
 hostname -i : Shows system's private IP
 hostnamectl set-hostname “swiggy” : Sets a new hostname
