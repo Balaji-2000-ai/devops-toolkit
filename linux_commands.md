@@ -24,3 +24,4 @@ who : Lists logged-in users
 whoami : Shows current user
 ps : Lists running processors
 kill -9 PID : used to kill a processor
+history : Shows the linux commands performed
