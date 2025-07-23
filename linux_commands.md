@@ -19,6 +19,7 @@ timedatectl : used to get timezones
 timedatectl set-timezone Asia/Kolkata : Sets system timezone to IST
 cal : gets calendar
 cal 2026 : gets specific year's calendar
+cal 8 2028 : gets specific month's calendar in a year
 who : Lists logged-in users
 whoami : Shows current user
 ps : Lists running processors
