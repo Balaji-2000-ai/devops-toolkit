@@ -61,3 +61,25 @@ rm -f * : Removes all files in the current directory
 rm -f a* : Removes all files starting with "a"
 rm -f *.txt : Removes all `.txt` files
 
+
+# Directory Commands
+mkdir : Creates directory     
+mkdir folder1 : Creates a directory  
+mkdir folder1 folder2 : Creates multiple directories  
+mkdir folder{1..5} : Creates directories in sequence (folder1 to folder5)  
+rmdir folder : Removes an empty directory  
+rmdir folder1 folder2 : Removes multiple empty directories  
+rmdir * : Removes all empty directories in the current path  
+rmdir a* : Removes all empty directories starting with "a"  
+rm -rf folder : Deletes a directory with all its contents  
+rm -rf * : Deletes all files and folders in the current directory  
+cd folder1 : Navigates into a directory  
+cd or cd ~ : Goes to the home directory  
+cd : Also returns to the home directory  
+cd .. : Moves one level up in the directory structure  
+cd ../../ : Moves two levels up  
+pwd : Prints the current working directory  
+touch foldername/filename : Creates a file inside a folder  
+mkdir folder1/folder2 : Creates a subfolder inside a folder
+
+
