@@ -49,7 +49,8 @@ df -h : Shows EBS Volume usage
 # File Commands
 cat : Reads file data
 touch : Creates a file
-ll : Lists files alphabetically with detailed information
+ll or ll -l : Lists files alphabetically with detailed information
+ll -r : Lists files in reverse order
 ll -t : Lists files sorted by modification time
 ls : Lists files
 touch file1 : Creates a single file
