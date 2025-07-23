@@ -83,5 +83,6 @@ touch foldername/filename : Creates a file inside a folder
 touch foldername/filename foldername/filename : Creates multiple files inside a folder  
 mkdir folder1/folder2 : Creates a subfolder inside a folder
 mkdir folder1/folder2 folder1/folder3 : Creates multiple subfolders inside a folder1
+mkdir -p folder1/folder2 : Creates parent and subdirectories at once (no error if folder already exists)
 
 
