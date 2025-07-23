@@ -52,6 +52,7 @@ touch : Creates a file
 ll or ll -l : Lists files alphabetically with detailed information
 ll -r : Lists files in reverse order
 ll -t : Lists files sorted by modification time
+ll -a : Lists all files including hidden ones
 ls : Lists files
 touch file1 : Creates a single file
 touch file1 file2 file3 : Creates multiple files
@@ -86,5 +87,12 @@ touch foldername/filename foldername/filename : Creates multiple files inside a 
 mkdir folder1/folder2 : Creates a subfolder inside a folder
 mkdir folder1/folder2 folder1/folder3 : Creates multiple subfolders inside a folder1
 mkdir -p folder1/folder2 : Creates parent and subdirectories at once (no error if folder already exists)
+
+
+# Cat Commands
+cat > filename : Overwrites file content  
+cat >> filename : Appends data to the file
+cat filename: Reads file data
+
 
 
