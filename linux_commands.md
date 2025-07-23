@@ -79,7 +79,9 @@ cd - : Switches to the previous directory
 cd .. : Moves one level down in the directory structure  
 cd ../../ : Moves two levels down 
 pwd : Prints the current working directory  
-touch foldername/filename : Creates a file inside a folder  
+touch foldername/filename : Creates a file inside a folder
+touch foldername/filename foldername/filename : Creates multiple files inside a folder  
 mkdir folder1/folder2 : Creates a subfolder inside a folder
+mkdir folder1/folder2 folder1/folder3 : Creates multiple subfolders inside a folder1
 
 
