@@ -15,6 +15,16 @@ ip addr : used to get private IP
 ip route : used to get private IP
 ifconfig : used to get private IP
 date : Shows current date and time 
+date +"%d" : Shows current day
+date +"%m" : Shows current month
+date +"%y" : Shows current year
+date +"%A" : Shows current day as like Tuesday
+date +"%B" : Shows current month as like July
+date +"%D" : Shows the current date as MM/DD/YYYY
+date +"%F" : Shows the current date as YYYY-MM-DD
+date +"%H" : Shows current hour
+date +"%M" : Shows current minutes
+date +"%S" : Shows current seconds
 timedatectl : used to get timezones 
 timedatectl set-timezone Asia/Kolkata : Sets system timezone to IST
 cal : gets calendar
