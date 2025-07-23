@@ -75,7 +75,7 @@ rm -rf folder : Deletes a directory with all its contents
 rm -rf * : Deletes all files and folders in the current directory  
 cd folder1 : Navigates into a directory  
 cd or cd ~ : Goes to the home directory  
-cd : Also returns to the home directory  
+cd - : Switches to the previous directory 
 cd .. : Moves one level down in the directory structure  
 cd ../../ : Moves two levels down 
 pwd : Prints the current working directory  
