@@ -17,6 +17,8 @@ ifconfig : used to get private IP
 date : Shows current date and time 
 timedatectl : used to get timezones 
 timedatectl set-timezone Asia/Kolkata : Sets system timezone to IST
+cal : gets calendar
+cal 2026 : gets specific year's calendar
 who : Lists logged-in users
 whoami : Shows current user
 ps : Lists running processors
