@@ -76,8 +76,8 @@ rm -rf * : Deletes all files and folders in the current directory
 cd folder1 : Navigates into a directory  
 cd or cd ~ : Goes to the home directory  
 cd : Also returns to the home directory  
-cd .. : Moves one level up in the directory structure  
-cd ../../ : Moves two levels up  
+cd .. : Moves one level down in the directory structure  
+cd ../../ : Moves two levels down 
 pwd : Prints the current working directory  
 touch foldername/filename : Creates a file inside a folder  
 mkdir folder1/folder2 : Creates a subfolder inside a folder
