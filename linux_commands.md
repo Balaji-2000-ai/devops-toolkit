@@ -67,7 +67,7 @@ rm -f *.txt : Removes all `.txt` files
 
 # Directory Commands
 mkdir : Creates directory     
-mkdir folder1 : Creates a directory  
+mkdir folder1 : Creates a single directory  
 mkdir folder1 folder2 : Creates multiple directories  
 mkdir folder{1..5} : Creates directories in sequence (folder1 to folder5)  
 rmdir folder : Removes an empty directory  
