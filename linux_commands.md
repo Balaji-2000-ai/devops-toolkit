@@ -35,3 +35,29 @@ whoami : Shows current user
 ps : Lists running processors
 kill -9 PID : used to kill a processor
 history : Shows the linux commands performed
+
+
+# Hardware Commands
+cat /proc/cpuinfo : Shows detailed CPU specs
+lscpu : Displays CPU information
+cat /proc/meminfo : Shows detailed RAM info
+free : Displays RAM usage
+free -m : Displays RAM usage in MB
+df -h : Shows EBS Volume usage
+
+
+# File Commands
+cat : Reads file data
+touch : Creates a file
+ll : Lists files with detailed information
+ls : Lists files
+touch file1 : Creates a single file
+touch file1 file2 file3 : Creates multiple files
+touch file{1..5} : Creates files in sequence 
+rm filename : Removes a file (Asks permission)
+rm -f filename : Forcefully removes a file (without confirmation)
+rm -f file1 file2 : Removes multiple files
+rm -f * : Removes all files in the current directory
+rm -f a* : Removes all files starting with "a"
+rm -f *.txt : Removes all `.txt` files
+
