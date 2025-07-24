@@ -48,6 +48,15 @@ df -h : Shows EBS Volume usage
 
 # File Commands
 cat : Reads file data
+cat filename : Displays file content
+tac filename : Displays file content in reverse order (last line first)
+cat -n filename : Displays file content with line numbers
+head filename : Displays the first 10 lines of the file by default
+head -5 filename : Displays the first 5 lines of the file
+tail filename : Displays the last 10 lines of the file by default
+tail -8 filename : Displays the last 8 lines of the file
+sed -n '5,17p' filename : Displays lines from line 5 to 17 from the file
+sed -n '3p' filename : Prints only line number 3 from the file  
 touch : Creates a file
 ll or ll -l : Lists files alphabetically with detailed information
 ll -r : Lists files in reverse order
@@ -139,7 +148,34 @@ chmod 111 folder : Gives execute-only permission to users, groups & others for t
 chmod 777 folder1 folder2 folder3 : Gives full permissions to multiple folders  
 chmod 777 * : Gives full permissions to all files in the current directory  
 chmod -R 777 folder : Recursively gives full permissions to folder and its contents  
-chmod +x filename : Adds execute permission to a file  
+chmod +x filename : Adds execute permission to a file
+
+
+# Search Commands
+grep "word" filename : Searches for word in the file and displays matching lines
+grep -n "word" filename : Searches for the word & shows matching lines with line numbers
+grep -in "word" filename : Case-insensitive search with line numbers
+grep -c "word" filename : Counts occurrences of the word in the file
+grep -in -e "word1" -e "word2" -e "word3" filename : Case-insensitive search for multiple words with line numbers
+grep -in "word" file1 file2 : Case-insensitive search for a word in multiple files with line numbers  
+grep -in -e "word1" -e "word2" -e "word3" file1 file2 : Case-insensitive search for multiple words in multiple files with line numbers  
+grep -in -e "word1" -e "word2" -e "word3" * : Case-insensitive search for multiple words in all files with line numbers  
+find . -name aws : Searches for files and directories named "aws" in the current directory and subdirectories
+find . -type d -name Balaji : Finds directories named "Balaji"  
+find . -type f -name Balaji : Finds files named "Balaji"  
+find . -type d -empty : Finds empty directories  
+find . -type d ! -empty : Finds non-empty directories  
+find . -type f -empty : Finds empty files  
+find . -type f ! -empty : Finds non-empty files  
+find . -group flipkart : Finds files and folders owned by group "flipkart"  
+find . -user amazon : Finds files and folders owned by user "amazon"  
+find . -perm 777 : Finds files with full permissions (read, write, execute for all)
+updatedb : Updates the database used by `locate` to reflect recent file changes  
+locate filename : Quickly finds the path of files and directories matching "filename"  
+
+
+
+
 
 
  
