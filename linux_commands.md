@@ -106,7 +106,7 @@ useradd username : Creates a new user (Group & Path also gets created)
 passwd username : Sets or changes password for a user 
 su - username : Switches to the specified user with a login shell
 cat /etc/passwd (or) getent passwd : Lists all users
-id username : Shows UuserID, GroupID, and group info of the specified user
+id username : Shows UserID, GroupID, and group info of the specified user
 userdel username : Deletes a user (User & Group will be deleted)
 userdel -r username : Delets the User, Group & Path
 
