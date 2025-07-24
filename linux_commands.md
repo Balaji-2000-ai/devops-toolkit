@@ -98,6 +98,42 @@ cp source destination : Copies file/folder (overwrites if destination has data)
 cp source source destination : copies multiple files
 cp -r source source destination : copies multiple folders recursively
 cat source | tee dest dest dest > /dev/null : copies source file content to multiple files
+mv source destination : Moves or renames file/folder (overwrites if destination exists and deletes the source after moving)
+
+
+# User Commands
+useradd username : Creates a new user (Group & Path also gets created) 
+passwd username : Sets or changes password for a user 
+su - username : Switches to the specified user with a login shell
+cat /etc/passwd (or) getent passwd : Lists all users
+id username : Shows UuserID, GroupID, and group info of the specified user
+userdel username : Deletes a user (User & Group will be deleted)
+userdel -r username : Delets the User, Group & Path
+
+
+# Group Commands
+groupadd groupname : Creates a new group  
+getent group (or) cat /etc/group : Lists all groups  
+groupdel groupname : Deletes a group  
+usermod -a -G groupname username : Adds a user to a group without removing from existing groups 
+
+
+# CHANGING THE OWNERS OF A FILE
+chown username filename : Changes owner of a file  
+chown username file1 file2 file3 : Changes owner of multiple files  
+chown username * : Changes owner of all files in the directory  
+chgrp groupname filename : Changes group of a file  
+chgrp groupname file1 file2 file3 : Changes group of multiple files  
+chgrp groupname * : Changes group of all files in the directory  
+chown username:groupname filename : Changes owner and group of a file  
+chown username:groupname file1 file2 : Changes owner and group of multiple files  
+chown user:group * : Changes owner and group of all files  
+chown user:group foldername : Changes owner of a folder  
+chown -R user:group foldername : Recursively changes owner and group of folder and its contents  
+
+
+ 
+
 
 
 
