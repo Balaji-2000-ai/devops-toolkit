@@ -89,10 +89,17 @@ mkdir folder1/folder2 folder1/folder3 : Creates multiple subfolders inside a fol
 mkdir -p folder1/folder2 : Creates parent and subdirectories at once (no error if folder already exists)
 
 
-# Cat Commands
+# Cat, Copy, Move Commands
 cat > filename : Overwrites file content  
 cat >> filename : Appends data to the file
 cat filename: Reads file data
+cat source >> destination : Appends source content to destination (no overwrite)
+cp source destination : Copies file/folder (overwrites if destination has data)
+cp source source destination : copies multiple files
+cp -r source source destination : copies multiple folders recursively
+cat source | tee dest dest dest > /dev/null : copies source file content to multiple files
+
+
 
 
 
