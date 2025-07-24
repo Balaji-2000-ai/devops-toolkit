@@ -118,7 +118,7 @@ groupdel groupname : Deletes a group
 usermod -a -G groupname username : Adds a user to a group without removing from existing groups 
 
 
-# CHANGING THE OWNERS OF A FILE
+# File Owners Commands
 chown username filename : Changes owner of a file  
 chown username file1 file2 file3 : Changes owner of multiple files  
 chown username * : Changes owner of all files in the directory  
@@ -129,7 +129,17 @@ chown username:groupname filename : Changes owner and group of a file
 chown username:groupname file1 file2 : Changes owner and group of multiple files  
 chown username:groupname * : Changes owner and group of all files  
 chown username:groupname foldername : Changes owner of a folder  
-chown -R username:groupname foldername : Recursively changes owner and group of folder and its contents  
+chown -R username:groupname foldername : Recursively changes owner and group of folder and its contents 
+
+
+# File Permissions Commands
+chmod 777 filename : Gives all permissions (read, write, execute) to users, groups & others  
+chmod 751 file1 file2 file3 : Sets specific permissions for multiple files  
+chmod 111 folder : Gives execute-only permission to users, groups & others for the folder  
+chmod 777 folder1 folder2 folder3 : Gives full permissions to multiple folders  
+chmod 777 * : Gives full permissions to all files in the current directory  
+chmod -R 777 folder : Recursively gives full permissions to folder and its contents  
+chmod +x filename : Adds execute permission to a file  
 
 
  
