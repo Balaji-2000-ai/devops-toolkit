@@ -136,7 +136,7 @@ chgrp groupname * : Changes group of all files in the directory
 chown username:groupname filename : Changes owner and group of a file  
 chown username:groupname file1 file2 : Changes owner and group of multiple files  
 chown username:groupname * : Changes owner and group of all files  
-chown username:groupname foldername : Changes owner of a folder  
+chown username:groupname foldername : Changes owner and group of a folder  
 chown -R username:groupname foldername : Recursively changes owner and group of folder and its contents 
 
 
