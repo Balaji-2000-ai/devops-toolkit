@@ -174,6 +174,12 @@ locate filename : Quickly finds the path of files and directories matching "file
 
 
 
+# Installations
+yum install packagename -y: Installs a package that automatically confirms the installation prompt
+
+
+
+
 
 
 
