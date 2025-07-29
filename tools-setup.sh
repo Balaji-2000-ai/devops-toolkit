@@ -11,4 +11,5 @@ git commit -m "message" filename: Commits the staged changes of the specified fi
 git commit -m "message" file file: Commits the staged changes of multiple files with the given commit message
 git log : Shows detailed commit history with commit ID, author, date, and commit message
 git show <commit-id>: Shows details of a specific commit
+git show : Shows details of the latest commit
 
