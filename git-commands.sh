@@ -4,7 +4,7 @@ git add filename: Stages the file for commit
 git add file1 file2: Stages multiple files 
 git add *: Stages all the files in the current directory
 git rm --cached filename : Removes the file from staging area but keeps it in the working directory
-git add -f * : Forcefully adds all files to the staging area, including those ignored by .gitignorexxxxxxxxxx    
+git add -f * : Forcefully adds all files to the staging area, including those ignored by .gitignore  
 git commit -m "message" .: Commits all staged files with the given commit message
 git commit -m "message" filename: Commits the staged changes of the specified file with the given commit message
 git commit -m "message" file file: Commits the staged changes of multiple files with the given commit message
