@@ -11,7 +11,7 @@ git commit -m "message" file file: Commits the staged changes of multiple files 
 git log : Shows detailed commit history with commit ID, author details, date, and commit message
 git log --oneline: Shows the commit history in a concise format with only abbreviated commit IDs and messages
 git log --pretty=oneline: Displays each commit on a single line with full commit ID and message
-git log -2 : Shows the last 2 commits from the commit history
+git log -2 : Shows the latest 2 commits from the commit history
 git log --follow --all filename: Shows complete commit history of a specific file, including Commits from all branches & File history across renames
 git commit --amend --author "Balaji <balaji@gmail.com>":Changes the author info of the last commit (creates a new commit ID)
 git commit --amend -m "New Message" : Updates the last commit message (creates a new commit ID)
