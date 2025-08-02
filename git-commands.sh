@@ -7,6 +7,11 @@ git commit -m "message" .: Commits all staged files with the given commit messag
 git commit -m "message" filename: Commits the staged changes of the specified file with the given commit message
 git commit -m "message" file file: Commits the staged changes of multiple files with the given commit message
 git log : Shows detailed commit history with commit ID, author details, date, and commit message
+git log --oneline: Shows the commit history in a concise format with only abbreviated commit IDs and messages
+git log --pretty=oneline: Displays each commit on a single line with full commit ID and message
+git log -2 : Shows the last 2 commits from the commit history
+git log --follow --all filename: Shows complete commit history of a specific file, including Commits from all branches & File history across renames
+git commit --amend --author "balaji <balaji@gmail.com>"
 git show <commit-id>: Shows details of a specific commit
 git show : Shows details of the latest commit
 git config user.name "username" : Sets the Git author's username for commits (local repo)
