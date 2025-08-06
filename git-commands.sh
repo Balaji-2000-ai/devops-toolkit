@@ -16,6 +16,7 @@ git log --follow --all filename: Shows complete commit history of a specific fil
 git commit --amend --author "Balaji <balaji@gmail.com>":Changes the author info of the last commit (creates a new commit ID)
 git commit --amend -m "New Message" : Updates the last commit message (creates a new commit ID)
 git show <commit-id>: Shows details of a specific commit
+git show commit_id --name-only: Displays the commit message and the list of files changed in the specified commit.
 git show : Shows details of the latest commit
 git reset --hard HEAD~1: Deletes the latest commit and all its code changes
 git reset --soft HEAD~2 : Deletes latest 2 commits but keeps changes staged for commit
