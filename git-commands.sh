@@ -24,4 +24,24 @@ git reflog : Shows recent commit history including deleted commits
 git cherry-pick commit_id : Restores a deleted commit with a new commit ID
 git config user.name "username" : Sets the Git author's username for commits (local repo)
 git config user.email "email@example.com" : Sets the Git author's email for commits (local repo)
+git commit --amend --no-edit:Updates the previous commit without changing its commit message (to add staged files to the last commit)
+
+
+
+git branch: Lists all local branches in the current Git repository(Branches are shown only after the first commit)
+git branch branchname: Creates a new branch with the given name
+git checkout branchname: Switches to the specified branch
+git checkout -b branchname: Creates a new branch with the given name and switches to it
+git checkout -d branchname: Deletes a local branch safely (only if it is fully merged)
+git branch -D branchname: Force deletes a branch, even if it is not merged
+git branch -m old_branch new_branch: Renames a local Git branch from old_branch to new_branch
+git branch -m newname : Renames the current branch to newname
+git merge branchname :  Combines changes from the specified branch into the current branch with a merge commit
+git cherry-pick commit_id : Applies the changes from the specified commit to the current branch without merging the entire branch history
+git restore file: Discards uncommitted changes in the file and restores it back to the last committed state
+git restore filename: Recovers deleted staged file
+git revert commit_id : Creates a new commit that undoes changes from the specified commit without altering commit history
+
+
+
 
