@@ -40,7 +40,7 @@ git merge branchname :  Combines changes from the specified branch into the curr
 git cherry-pick commit_id : Applies the changes from the specified commit to the current branch without merging the entire branch history
 git restore file: Discards uncommitted changes in the file and restores it back to the last committed state
 git restore filename: Recovers deleted staged file
-git revert commit_id : Creates a new commit that undoes changes from the specified commit without altering commit history
+git revert commit_id : Creates a new commit that deletes actions from the specified commit without altering commit history
 
 
 
