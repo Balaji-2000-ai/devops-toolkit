@@ -42,6 +42,10 @@ git restore file: Discards uncommitted changes in the file and restores it back 
 git restore filename: Recovers deleted staged file
 git revert commit_id : Creates a new commit that deletes actions from the specified commit without altering commit history
 git rebase branchname: Reapplies features branch’s commits on top of the specified master branch to create a linear commit
+git stash : Temporarily stores uncommitted changes and reverts the file to the last commit
+git stash apply : Reapplies the most recently stashed changes to the file without removing them from the stash list
+git stash list : Shows all the stashed changes saved in the repository
+git stash clear : Removes all the stashed changes from the stash list permanently
 
 
 
