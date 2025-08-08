@@ -41,6 +41,7 @@ git cherry-pick commit_id : Applies the changes from the specified commit to the
 git restore file: Discards uncommitted changes in the file and restores it back to the last committed state
 git restore filename: Recovers deleted staged file
 git revert commit_id : Creates a new commit that deletes actions from the specified commit without altering commit history
+git rebase branchname: Reapplies your current branch’s commits on top of the specified branchname to create a linear commit
 
 
 
