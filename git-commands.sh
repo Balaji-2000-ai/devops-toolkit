@@ -28,6 +28,9 @@ git commit --amend --no-edit:Updates the previous commit without changing its co
 
 
 
+"Always git pull before git push
+This ensures your local branch is up to date with the remote branch before you try to push changes, reducing the chances of merge conflicts"
+
 git branch: Lists all local branches in the current Git repository(Branches are shown only after the first commit)
 git branch branchname: Creates a new branch with the given name
 git checkout branchname: Switches to the specified branch
