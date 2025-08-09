@@ -51,6 +51,8 @@ git stash clear : Removes all the stashed changes from the stash list permanentl
 git remote add origin <url>: Adds a new remote repository with the name origin and links it to the specified <url>
 git remote -v: Displays all configured remote repositories along with their fetch and push URLs
 git push -u origin <branch_name>: Pushes the branch to the remote origin and sets it as the upstream branch
+git clone repo_url: Creates a local copy of the remote repository, defaulting to the main branch (if it exists)
+git pull origin branch_name : Fetches & merges changes from the specified branch into the current local branch
 
 
 
