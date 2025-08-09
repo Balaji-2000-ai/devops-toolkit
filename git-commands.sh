@@ -56,8 +56,7 @@ git remote -v: Displays all configured remote repositories along with their fetc
 git push -u origin <branch_name>: Pushes the branch to the remote origin and sets it as the upstream branch
 git clone repo_url: Creates a local copy of the remote repository, defaulting to the main branch (if it exists)
 git pull origin branch_name : Fetches & merges changes from the specified branch into the current local branch
-git branch -a: Lists all branches, both local and remote.
-This is end
+git branch -a: Lists all branches, both local and remote
 
 
 
