@@ -35,7 +35,7 @@ git branch: Lists all local branches in the current Git repository(Branches are 
 git branch branchname: Creates a new branch with the given name
 git checkout branchname: Switches to the specified branch
 git checkout -b branchname: Creates a new branch with the given name and switches to it
-git checkout -d branchname: Deletes a local branch safely (only if all the commited changes are fully merged)
+git branch -d branchname: Deletes a local branch safely (only if all the commited changes are fully merged)
 git branch -D branchname: Force deletes a branch, even if it is not merged
 git branch -m old_branch new_branch: Renames a local Git branch from old_branch to new_branch
 git branch -m newname : Renames the current branch to newname
