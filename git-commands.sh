@@ -25,6 +25,9 @@ git cherry-pick commit_id : Restores a deleted commit with a new commit ID
 git config user.name "username" : Sets the Git author's username for commits (local repo)
 git config user.email "email@example.com" : Sets the Git author's email for commits (local repo)
 git commit --amend --no-edit:Updates the previous commit without changing its commit message (to add staged files to the last commit)
+git tag -a Annotation -m "Message": Creates an tag with the given name and message for the latest commit by default
+git tag: Lists all tags in the repository
+git show tag_name: Displays details of the commit associated with the given tag and tag details
 
 
 
@@ -52,11 +55,13 @@ git stash clear : Removes all the stashed changes from the stash list permanentl
 
 
 git remote add origin <url>: Adds a new remote repository with the name origin and links it to the specified <url>
+git remote rm origin: Removes the remote connection named origin from the local repository.
 git remote -v: Displays all configured remote repositories along with their fetch and push URLs
 git push -u origin <branch_name>: Pushes the branch to the remote origin and sets it as the upstream branch
 git clone repo_url: Creates a local copy of the remote repository, defaulting to the main branch (if it exists)
 git pull origin branch_name : Fetches & merges changes from the specified branch into the current local branch
 git branch -a: Lists all branches, both local and remote
+git push origin tag-name: Pushes the specified tag from the local repo to the remote origin.
 
 
 
