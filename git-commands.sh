@@ -59,9 +59,13 @@ git remote rm origin: Removes the remote connection named origin from the local 
 git remote -v: Displays all configured remote repositories along with their fetch and push URLs
 git push -u origin <branch_name>: Pushes the branch to the remote origin and sets it as the upstream branch
 git clone repo_url: Creates a local copy of the remote repository, defaulting to the main branch (if it exists)
-git pull origin branch_name : Fetches & merges changes from the specified branch into the current local branch
+git pull origin branch_name : Fetches & merges changes from the specified branch into the current local branch (Fetch+Merge)
 git branch -a: Lists all branches, both local and remote
-git push origin tag-name: Pushes the specified tag from the local repo to the remote origin.
+git push origin tag-name: Pushes the specified tag from the local repo to the remote origin
+git fetch origin branch_name: Downloads changes from the specified branch of the remote repository without merging them into the local branch
+git merge origin/branch_name: Merges the fetched changes from the specified remote branch into current local branch
+
+
 
 
 
