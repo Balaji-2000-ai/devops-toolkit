@@ -1,11 +1,15 @@
 # Git
 yum install git -y: Installs Git on the system
 git --version or git -v: Checks the installed Git version
+
+#Maven & Java
 yum install java-1.8.0-openjdk -y: Installs Java 8 (OpenJDK), required to run and build Java-based applications
 java -version: Verifies Java installation and shows the installed version
 yum install maven -y: Installs Apache Maven, a build tool used to compile, package, and manage dependencies for Java-based applications
 mvn -v: Verifies Maven installation and shows the installed Maven version along with Java details
 mvn clean package: Cleans old build files and packages the application into a `.jar` or `.war` file, ready for deployment
+
+#Jenkins & Java
 yum install java-17-amazon-corretto -y: Installs Amazon Corretto 17 (OpenJDK 17 distribution), required for tools like Jenkins and Spring Boot 3
 update-alternatives --config java: Switch between multiple installed Java versions and select the default version to use on the system
 
