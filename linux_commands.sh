@@ -178,6 +178,10 @@ locate filename : Quickly finds the path of files and directories matching "file
 yum install packagename -y: Installs a package that automatically confirms the installation prompt
 
 
+wget: Command-line tool to download files from the internet; commonly used to fetch installation packages or scripts on Linux servers
+
+
+
 
 
 
