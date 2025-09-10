@@ -6,7 +6,7 @@ java -version: Verifies Java installation and shows the installed version
 yum install maven -y: Installs Apache Maven, a build tool used to compile, package, and manage dependencies for Java-based applications
 mvn -v: Verifies Maven installation and shows the installed Maven version along with Java details
 mvn clean package: Cleans old build files and packages the application into a `.jar` or `.war` file, ready for deployment
-yum install java-17-amazon-corretto -y: Installs Amazon Corretto 17 (OpenJDK 17 distribution), used to run/build modern Java applications and required for tools like Jenkins and Spring Boot 3
+yum install java-17-amazon-corretto -y: Installs Amazon Corretto 17 (OpenJDK 17 distribution), required for tools like Jenkins and Spring Boot 3
 
 
 
