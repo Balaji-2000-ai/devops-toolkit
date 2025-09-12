@@ -19,24 +19,37 @@ update-alternatives --config java: Switch between multiple installed Java versio
 
 #Jenkins
 
-#STEP-1: INSTALLING GIT JAVA-1.8.0 MAVEN 
+#STEP-1: Install prerequisites 
 yum install git java-1.8.0-openjdk maven -y
 
+#STEP-2: Update system packages
 yum update –y
+
+#STEP-3: Add Jenkins repo and import Jenkins key
 wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
 rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+
+#STEP-4: Upgrade system after adding repo
 yum upgrade
+
+#STEP 5: Install Java 17 (required for Jenkins) & Jenkins
 yum install java-17-amazon-corretto -y
 yum install jenkins -y
+
+#STEP 6: Enable and start Jenkins service
 systemctl enable jenkins
 systemctl start jenkins
 systemctl status jenkins
+
+#STEP 7: Fix /tmp mounting issues (required in some cloud servers for Jenkins to run)
 mkdir -p /var/tmp_disk
 chmod 1777 /var/tmp_disk
 mount --bind /var/tmp_disk /tmp
 echo '/var/tmp_disk /tmp none bind 0 0' | tee -a /etc/fstab
 systemctl mask tmp.mount
 df -h /tmp
+
+#STEP 8: Restart Jenkins after /tmp fix
 systemctl restart jenkins
 
 
