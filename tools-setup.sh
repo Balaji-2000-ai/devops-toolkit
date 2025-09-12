@@ -40,7 +40,7 @@ df -h /tmp
 systemctl restart jenkins
 
 
-#Tomcat
+#Tomcat (Versions gets updated every 2 weeks)
 
 #STEP-1: Install Java 17
 yum install java-17-amazon-corretto -y
