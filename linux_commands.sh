@@ -179,6 +179,8 @@ yum install packagename -y: Installs a package that automatically confirms the i
 
 
 wget: Command-line tool to download files from the internet; commonly used to fetch installation packages or scripts on Linux servers
+tar -zxvf <file>.tar.gz: Extracts a `.tar.gz` (gzip compressed) archive
+
 
 
 
