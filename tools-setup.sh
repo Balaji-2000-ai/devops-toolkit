@@ -17,7 +17,7 @@ update-alternatives --config java: Switch between multiple installed Java versio
 
 
 
-#Jenkins
+#Jenkins Installation
 
 #STEP-1: INSTALLING GIT JAVA-1.8.0 MAVEN 
 yum install git java-1.8.0-openjdk maven -y
