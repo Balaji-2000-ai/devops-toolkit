@@ -8,8 +8,8 @@
 5. Create a Repository in Nexus - Settings → Repositories → Create Repository → Maven2 (Hosted) -> Provide a Name and Set Deployment Policy as `Allow redeploy` 
 6. Create a Freestyle Job – In Jenkins Dashboard, create a freestyle job with Source Code Management as GIT, provide the GitHub Repository URL, and add credentials if it’s a private repo.   
 7. Configure Build Steps – Add a build step, choose Invoke top-level Maven targets, and set goals as `clean package`.
-8. Add Build Step – Nexus Artifact Uploader – Select Nexus3 as version, Provide Nexus URL (without HTTP), Add Nexus credentials, Enter Group ID & Version (pom.xml), Repository name (created in Nexus), Add Artifact details: Artifact ID (pom.xml), Type → war (for Java app), File → target/<artifactId>-<version>.war
+8. Add Build Step (Manual Process) – Nexus Artifact Uploader – Select Nexus3 as version, Provide Nexus URL (without HTTP), Add Nexus credentials, Enter Group ID & Version (pom.xml), Repository name (created in Nexus), Add Artifact details: Artifact ID (pom.xml), Type → war (for Java app), File → target/<artifactId>-<version>.war
 9. Post-Build Actions – Select Deploy war/ear to a container, set war file path as `target/*.war`, define the context path (app name), add container settings with Tomcat 9, provide tomcats's Manager App credentials, and specify the Tomcat URL.  
 10. Artifact Storage in Nexus – After a successful build, the `.war` files are stored inside the repository created in Nexus under the Browse section.  
 11. Rollback to Previous Versions – In Nexus, expand the version of the application stored in the repository. Select the required `.war` file and download it by clicking the Path link. Open Tomcat Web Application Manager, upload the downloaded `.war` file in WAR file to deploy section, and Deploy.  
-    Access the application by clicking the deployed `.war` file name under the Applications section.  
+    Access the application by clicking the deployed `.war` file name under the Applications section (Manual Process)
