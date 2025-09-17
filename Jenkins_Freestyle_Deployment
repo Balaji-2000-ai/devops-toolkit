@@ -1,7 +1,7 @@
 # Deploying a Basic Java Application using a Freestyle Project in Jenkins
 
 
-1. Launch the CI/CD Jenkins Server – Start the Jenkins server to enable pipeline execution.  
+1. Launch the CI/CD Jenkins Server – Start the Jenkins server to enable pipeline execution and install Deploy to Container plugin.  
 2. Launch the Tomcat Application Server – Start the Tomcat server where the application will be deployed. 
 3. Install the Deploy to Container Plugin – Go to `Manage Jenkins` → `Plugins` → `Available Plugins` → search for Deploy to Container Plugin and install it.  
 4. Create a Freestyle Job – In Jenkins Dashboard, create a freestyle job with Source Code Management as GIT, provide the GitHub Repository URL, and add credentials if it’s a private repo.  
