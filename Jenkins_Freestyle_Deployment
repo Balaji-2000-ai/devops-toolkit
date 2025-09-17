@@ -1,4 +1,4 @@
-# Deploying a Basic Application using a Freestyle Project in Jenkins
+# Deploying a Basic Java Application using a Freestyle Project in Jenkins
 
 
 1. Launch the CI/CD Jenkins Server – Start the Jenkins server to enable pipeline execution.  
