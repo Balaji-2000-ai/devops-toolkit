@@ -53,6 +53,8 @@ df -h /tmp
 systemctl restart jenkins
 
 
+
+
 #Tomcat (Versions gets updated every 2 weeks)
 
 #STEP-1: Install Java 17
@@ -77,6 +79,59 @@ sed -i '22d'  apache-tomcat-9.0.109/webapps/manager/META-INF/context.xml
 
 #STEP-6: Start Tomcat server
 sh apache-tomcat-9.0.109/bin/startup.sh
+
+
+
+#Nexus
+
+# STEP 1: Update system packages
+sudo yum update -y
+
+# STEP 2: Install prerequisites
+sudo yum install wget -y
+sudo yum install java-17-amazon-corretto-jmods -y   # Java 17 runtime for Nexus
+
+# STEP 3: Download Nexus
+sudo mkdir /app && cd /app
+sudo wget https://download.sonatype.com/nexus/3/nexus-3.79.1-04-linux-x86_64.tar.gz
+
+# STEP 4: Extract and rename
+sudo tar -xvf nexus-3.79.1-04-linux-x86_64.tar.gz
+sudo mv nexus-3.79.1-04 nexus
+
+# STEP 5: Create dedicated Nexus user
+sudo adduser nexus
+sudo chown -R nexus:nexus /app/nexus
+sudo chown -R nexus:nexus /app/sonatype*
+
+# STEP 6: Configure Nexus to run as nexus user
+sudo sed -i '27  run_as_user="nexus"' /app/nexus/bin/nexus
+
+# STEP 7: Create systemd service file
+sudo tee /etc/systemd/system/nexus.service > /dev/null << EOL
+[Unit]
+Description=nexus service
+After=network.target
+
+[Service]
+Type=forking
+LimitNOFILE=65536
+User=nexus
+Group=nexus
+ExecStart=/app/nexus/bin/nexus start
+ExecStop=/app/nexus/bin/nexus stop
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
+EOL
+
+# STEP 8: Enable Nexus service
+sudo chkconfig nexus on
+sudo systemctl start nexus
+sudo systemctl enable nexus
+sudo systemctl status nexus
+
 
 
 
