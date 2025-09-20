@@ -1,0 +1,20 @@
+pipeline {
+    agent any
+    stages {
+        stage ("Code") {
+            steps {
+                git 'https://github.com/Balaji-2000-ai/one.git'
+            }
+        }
+        stage ("Build") {
+            steps {
+                sh "mvn clean package"
+            }
+        }
+        stage ("Deploy") {
+            steps{
+                deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'tomcat', path: '', url: 'http://3.80.26.129:8080/')], contextPath: 'Basic-Application', war: 'target/*.war'
+            }
+        }
+    }
+}
