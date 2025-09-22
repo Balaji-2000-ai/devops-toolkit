@@ -82,7 +82,7 @@ sh apache-tomcat-9.0.109/bin/startup.sh
 
 
 
-#Nexus
+#Nexus (T2.MEDIUM and 20GB EBS volume required)
 
 # STEP 1: Update system packages
 sudo yum update -y
