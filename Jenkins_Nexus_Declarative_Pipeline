@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Code') {
+            steps {
+                git 'https://github.com/Balaji-2000-ai/one.git'
+            }
+        }
+        stage('Build & Test') {
+            steps {
+                sh 'mvn clean package'
+            }
+        }
+        stage('Artifact Upload') {
+            steps {
+                nexusArtifactUploader artifacts: [[artifactId: 'myweb', classifier: '', file: 'target/myweb-8.7.2.war', type: 'war']], credentialsId: 'Nexus', groupId: 'in.javahome', nexusUrl: '54.221.115.122:8081/', nexusVersion: 'nexus3', protocol: 'http', repository: 'Nexus-Repo', version: '8.7.2'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'tomcat', path: '', url: 'http://52.90.165.249:8080/')], contextPath: 'One-Application', war: 'target/*.war'
+            }
+        }
+    }
+}
