@@ -134,7 +134,7 @@ sudo systemctl status nexus
 
 
 
-#Sonar (t2.medium)
+#Sonar (t2.medium, Default Credentials: admin & admin)
 
 #! /bin/bash
 cd /opt/
@@ -149,6 +149,12 @@ su - sonar
 #run this on server manually
 #sh /opt/sonarqube-8.9.6.50800/bin/linux/sonar.sh start
 #echo "user=admin & password=admin"
+
+#sh sonar.sh start     # Start SonarQube
+#sh sonar.sh stop      # Stop SonarQube
+#sh sonar.sh restart   # Restart SonarQube
+#sh sonar.sh status    # Check status
+
 
 
 
