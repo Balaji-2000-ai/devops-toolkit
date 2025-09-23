@@ -1,0 +1,21 @@
+node {
+    stage ("Code") {
+        git 'https://github.com/Balaji-2000-ai/one.git'
+    }
+    stage ("Build & Test") {
+        sh 'mvn clean package'
+    }
+    stage ("Code Quality Analysis") {
+        withSonarQubeEnv('mysonar') {
+            def mavenHome = tool name: "maven", type: "maven"
+            def mavenCMD = "${mavenHome}/bin/mvn"
+            sh "${mavenCMD} sonar:sonar"
+        }
+    }
+    stage ("Artifact Upload") {
+        nexusArtifactUploader artifacts: [[artifactId: 'myweb', classifier: '', file: 'target/myweb-8.7.2.war', type: 'war']], credentialsId: 'nexus', groupId: 'in.javahome', nexusUrl: '13.222.170.77:8081/', nexusVersion: 'nexus3', protocol: 'http', repository: 'Nexus-Repo', version: '8.7.2'
+    }
+    stage ("Deploy") {
+        deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'tomcat-cred', path: '', url: 'http://3.93.68.212:8080/')], contextPath: 'One-App', war: 'target/*.war'
+    }
+}
