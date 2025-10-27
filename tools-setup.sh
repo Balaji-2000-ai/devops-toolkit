@@ -14,6 +14,7 @@ yum install java-17-amazon-corretto -y: Installs Amazon Corretto 17 (OpenJDK 17 
 update-alternatives --config java: Switch between multiple installed Java versions and select the default version to use on the system
 /var/lib/jenkins: Default Jenkins home directory on Linux; contains jobs, plugins, credentials, and global configuration files
 /etc/ansible/: Default configuration directory for Ansible on Linux systems
+/var/www/html/: Default web root directory used by Apache HTTP Server (and sometimes Nginx) on Linux systems.
 
 
 
