@@ -13,6 +13,7 @@ mvn clean package: Cleans old build files and packages the application into a `.
 yum install java-17-amazon-corretto -y: Installs Amazon Corretto 17 (OpenJDK 17 distribution), required for tools like Jenkins and Spring Boot 3
 update-alternatives --config java: Switch between multiple installed Java versions and select the default version to use on the system
 /var/lib/jenkins: Default Jenkins home directory on Linux; contains jobs, plugins, credentials, and global configuration files
+/etc/ansible/: Default configuration directory for Ansible on Linux systems
 
 
 
