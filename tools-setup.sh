@@ -160,5 +160,36 @@ sh sonar.sh start     # Start SonarQube
 
 
 
+# Ansible
+#Master & Slave Servers
+
+passwd root  #Set Passwords
+vim /etc/ssh/sshd_config (PermitRootLogin yes: 40, PasswordAuthentication yes: 65)
+systemctl restart sshd
+systemctl status sshd
+
+#Ansible/Master Server
+yum install ansible -y
+yum install python-pip -y
+ssh-keygen  -- > enter 3 times
+ssh-copy-id root@private_ip_slave -- > yes -- > password (Repeat for all slave servers)
+
+vim /etc/ansible/hosts:
+[dev]
+{private_ip_slave_servers}
+[test]
+{private_ip_slave_servers}
+
+ansible all -m ping
+ansible all --list-hosts
+
+
+
+
+
+
+
+
+
 
 
