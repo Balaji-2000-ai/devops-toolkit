@@ -1,0 +1,6 @@
+ansible-vault encrypt file_name: Encrypts an existing file so the contents are secured and require a vault password to decrypt or use in playbooks
+ansible-vault view file_name: Displays the contents of an encrypted Ansible file after entering the vault password. The file remains encrypted on disk
+ansible-vault decrypt file_name: Decrypts an encrypted Ansible file permanently, restoring it to plain text after entering the vault password
+ansible-vault rekey file_name: Changes the existing vault password of an encrypted Ansible file without decrypting it manually
+
+
