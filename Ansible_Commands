@@ -4,3 +4,18 @@ ansible-vault decrypt file_name: Decrypts an encrypted Ansible file permanently,
 ansible-vault rekey file_name: Changes the existing vault password of an encrypted Ansible file without decrypting it manually
 
 
+#Adhoc Commands- Single line commands
+ansible all -m ping
+ansible test -m yum -a "pkg=git state=present"
+ansible test -m yum -a "pkg=java-1.8.0-openjdk state=present"
+ansible test -m command -a "systemctl stop httpd"
+ansible test -m command -a "systemctl start httpd"
+ansible test -m copy -a "src=flm.yml dest=/root"
+ansible dev -m shell -a "free -h"
+ansible dev -m shell -a "df -h"
+ansible dev -m shell -a "df -h"
+
+
+
+
+
