@@ -1,0 +1,63 @@
+- hosts: all
+  connection: ssh
+
+  tasks:
+    - name: Installing git
+      yum:
+        name: git
+        state: present
+
+    - name: Installing maven
+      yum:
+        name: maven
+        state: present
+
+    - name: Installing java1.8
+      yum:
+        name: java-1.8.0-openjdk
+        state: present
+
+    - name: Adding Jenkins Repo
+      get_url:
+        url: https://pkg.jenkins.io/redhat-stable/jenkins.repo
+        dest: /etc/yum.repos.d/jenkins.repo
+
+    - name: Import Jenkins GPG key
+      rpm_key:
+        state: present
+        key: https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+
+    - name: Installing Java17
+      yum:
+        name: java-17-amazon-corretto
+        state: present
+
+    - name: Installing Jenkins
+      yum:
+        name: jenkins
+        state: present
+
+    - name: Enable and start Jenkins service
+      systemd:
+        name: jenkins
+        enabled: yes
+        state: started
+
+    - name: Creating /var/tmp_disk directory
+      file:
+        path: "/var/tmp_disk"
+        state: directory
+        mode: '1777'
+
+    - name: Bind mount /var/tmp_disk to /tmp
+      command: mount --bind /var/tmp_disk /tmp
+
+    - name: Mask tmp.mount unit
+      systemd:
+        name: tmp.mount
+        masked: yes
+
+    - name: Restart Jenkins
+      service:
+        name: jenkins
+        state: started
