@@ -18,6 +18,12 @@ ansible dev -m shell -a "df -h"
 ansible dev -m shell -a "df -h"
 
 
+#Setup Modules
+ansible_os_family
+ansible_kernel
+ansible_architecture
+
+
 
 
 
