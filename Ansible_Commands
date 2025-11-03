@@ -4,6 +4,8 @@ ansible-vault decrypt file_name: Decrypts an encrypted Ansible file permanently,
 ansible-vault rekey file_name: Changes the existing vault password of an encrypted Ansible file without decrypting it manually
 
 
+ansible-playbook playbook.yml: Executes the given Ansible playbook to perform automation tasks on target hosts defined in the inventory
+
 #Adhoc Commands- Single line commands
 ansible all -m ping
 ansible test -m yum -a "pkg=git state=present"
