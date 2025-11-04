@@ -1,5 +1,0 @@
-Stop Docker & container
-cd /var/lib/docker/containers/<container_id>/hostconfig.json
-Edit `"HostPort"` under `"PortBindings"`
-Reload Docker daemon and start Docker: systemctl deamon-reload && systemctl start docker
-Start the container: docker start container_name

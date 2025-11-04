@@ -1,0 +1,23 @@
+#Docker Container Host Port
+Stop Docker & container
+cd /var/lib/docker/containers/<container_id>/hostconfig.json
+Edit `"HostPort"` under `"PortBindings"`
+Reload Docker daemon and start Docker: systemctl deamon-reload && systemctl start docker
+Start the container: docker start container_name
+
+
+#Jenkins
+cd /usr/lib/systemd/system
+vim jenkins.service and change JENKINS_PORT at line 70
+systemctl daemon-reload
+systemctl restart jenkins
+
+
+#Tomcat
+cd <tomcat_installation_directory>/conf
+vim server.xml and in line 71 change `<Connector port="8080" ...>` to desired port
+cd ../bin
+sh shutdown.sh
+sh startup.sh
+
+
