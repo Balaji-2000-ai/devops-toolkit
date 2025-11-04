@@ -6,5 +6,7 @@ docker pull image_name[:tag]: Downloads the specified Docker image (and version)
 docker images: Lists all Docker images stored locally along with their repository name, tag, image ID, creation time, and size
 docker run -d --name sonar -p 9000:9000 sonarqube:lts-community: Runs the SonarQube Community LTS container in detached mode, mapping port 9000 to access the web dashboard
 docker ps: Lists all currently running containers with details like container ID, image, status, and port mappings
+docker exec -it container_name bash: Opens an interactive Bash shell inside a running container to execute commands directly within it
+
 
 
