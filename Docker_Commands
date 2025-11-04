@@ -1,0 +1,4 @@
+yum install docker -y: Installs Docker using yum. The -y flag auto-confirms prompts
+systemctl status docker: Checks if the Docker service is active
+systemctl start docker: Starts the Docker daemon
+docker version: Verifies that Docker is working and the client can talk to the daemon
