@@ -2,3 +2,8 @@ yum install docker -y: Installs Docker using yum. The -y flag auto-confirms prom
 systemctl status docker: Checks if the Docker service is active
 systemctl start docker: Starts the Docker daemon
 docker version: Verifies that Docker is working and the client can talk to the daemon
+docker pull image_name[:tag]: Downloads the specified Docker image (and version) from Docker Hub or another registry to the local system
+docker images: Lists all Docker images stored locally along with their repository name, tag, image ID, creation time, and size
+docker run -d --name sonar -p 9000:9000 sonarqube:lts-community: Runs the SonarQube Community LTS container in detached mode, mapping port 9000 to access the web dashboard
+
+
