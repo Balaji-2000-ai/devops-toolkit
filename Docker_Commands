@@ -5,8 +5,42 @@ docker version: Verifies that Docker is working and the client can talk to the d
 docker pull image_name[:tag]: Downloads the specified Docker image (and version) from Docker Hub or another registry to the local system
 docker images: Lists all Docker images stored locally along with their repository name, tag, image ID, creation time, and size
 docker run -d --name sonar -p 9000:9000 sonarqube:lts-community: Runs the SonarQube Community LTS container in detached mode, mapping port 9000 to access the web dashboard
+docker run -itd --name sonar -p 9000:9000 sonarqube:lts-community: Runs the SonarQube Community LTS container in detached interactive mode, exposing port 9000 for web access
 docker ps: Lists all currently running containers with details like container ID, image, status, and port mappings
 docker exec -it container_name bash: Opens an interactive Bash shell inside a running container to execute commands directly within it
+docker stop container_name: Gracefully stops a running container by sending a termination signal (SIGTERM)
+docker stop container_1 container_2 container_3: Gracefully stops multiple running containers at once by sending a SIGTERM signal to each
+docker stop $(docker ps -q): Stops all currently running containers by passing their container IDs
+docker kill container_name: Forcefully stops a running container immediately without waiting for cleanup (sends SIGKILL signal)
+docker rm container_name: Removes a stopped container from the system
+docker rm container1 container2 container3: Removes multiple stopped containers at once (Make sure containers are stopped before running this command)
+docker rm $(docker ps -a -q): Removes all containers (stopped or after stopping running ones) by passing their container IDs
+docker container prune: Deletes all stopped containers after confirmation to free up disk space
+docker ps -a: Lists all containers, including running, stopped, and exited ones, along with their status and details
+docker start container_name: Starts a previously stopped container without recreating it
+docker start container_1 container_2 container_3: Starts multiple stopped containers at once using their names or IDs
+docker start $(docker ps -a -q): Starts all stopped containers by passing their container IDs
+docker rename old_name new_name: Renames a container without stopping it. Useful for clarity or avoiding naming conflicts
+
+
+docker rmi image_name: Removes Docker image from the local system. Containers using the image must be stopped/removed first
+docker rmi image1 image2: Removes multiple Docker images at once. Images must not be used by running containers
+docker rmi $(docker images -q): Removes all Docker images by passing their image IDs. Make sure no containers are using the images
+docker image prune: Removes dangling (unused) images after confirmation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
