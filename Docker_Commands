@@ -30,6 +30,7 @@ docker image prune: Removes dangling (unused/overriden) images after confirmatio
 
 
 docker build -t image_name:tag_name .: Builds a Docker image from the Dockerfile in the current directory and tags it with the given name
+docker login: Used to authenticate your local Docker client with Docker Hub. Required before pushing images to the registry
 
 
 
