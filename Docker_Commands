@@ -35,6 +35,22 @@ docker tag <old_name> <new_name>: Used to rename or retag a Docker image. Common
 docker push image_name: Uploads the tagged Docker image from the local system to a remote Docker registry
 
 
+docker inspect container_name: Displays detailed information about a Docker container in JSON format, including configuration, state, and network details
+docker network ls: Lists all Docker networks (default and custom), showing their names, drivers, and scopes
+docker network create network_name: Creates a new custom Docker network with the specified name, using the default bridge driver unless another driver is specified
+docker network rm network_name: Removes the specified Docker network. The network must not have any connected containers; otherwise, the removal will fail
+docker network prune: Removes all unused Docker networks that are not connected to any containers
+docker network inspect network_name: Displays detailed information about the specified Docker network, including connected containers, IP address ranges, driver type, and network configuration
+docker run -itd --name container --network network_name image_name: Creates a new container from the specified image, attaches it to the given Docker network
+docker network connect network_name container_name: Connects an existing container to a specified Docker network without restarting the container
+
+
+
+
+
+
+
+
 
 
 
