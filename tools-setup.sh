@@ -187,6 +187,12 @@ ansible all -m ping
 ansible all --list-hosts
 
 
+#Docker
+yum install docker -y
+systemctl start docker
+systemctl status docker
+
+
 
 
 
