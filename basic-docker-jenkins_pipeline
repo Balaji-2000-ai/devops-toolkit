@@ -1,0 +1,30 @@
+#Dockerfile
+FROM nginx
+MAINTAINER Balaji
+LABEL description="I am Deploying in nginx webserver"
+EXPOSE 80
+COPY . /usr/share/nginx/html
+
+
+
+#Jenkins_Pipeline_Script
+pipeline{
+    agent any
+    stages{
+        stage ("Code"){
+            steps{
+                git 'https://github.com/Balaji-2000-ai/docker-practice.git'
+            }
+        }
+        stage ("Docker Image Creation"){
+            steps{
+                sh "docker build -t html-image ."
+            }
+        }
+        stage ("Docker Container Creation"){
+            steps{
+                sh "docker run -itd --name MyContainer -p 6789:80 html-image"
+            }
+        }
+    }
+}
