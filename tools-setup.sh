@@ -16,6 +16,7 @@ update-alternatives --config java: Switch between multiple installed Java versio
 /etc/ansible/: Default configuration directory for Ansible on Linux systems
 /var/www/html/: Default web root directory used by Apache HTTP Server (and sometimes Nginx) on Linux systems
 /var/lib/docker/: Default storage location for Docker data including containers, images, volumes, networks, and build cache
+/usr/local/apache2/htdocs/: Default path of Apache HTTP Server via docker httpd image 
 
 
 
