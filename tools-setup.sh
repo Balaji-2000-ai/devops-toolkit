@@ -17,7 +17,7 @@ update-alternatives --config java: Switch between multiple installed Java versio
 /var/www/html/: Default web root directory used by Apache HTTP Server (and sometimes Nginx) installed directly on Linux systems (via yum/apt)
 /var/lib/docker/: Default storage location for Docker data including containers, images, volumes, networks, and build cache
 /usr/local/apache2/htdocs/: Default document root for Apache when running inside the official Docker `httpd` image
-/usr/share/nginx/html: Default document root for Nginx (both on Linux and in the official Nginx Docker image)
+/usr/share/nginx/html: Default document root for Nginx (both on Linux via yum/apt and in the official Nginx Docker image)
   
 
 
