@@ -8,7 +8,7 @@ CMD ["catalina.sh", "run"]
 
 
 
-#DB-MySQL
+#DB-- Container name and DB Endpoint must be same
 
 FROM mysql:5.7.25
 ENV MYSQL_ROOT_PASSWORD="devopspassword"
