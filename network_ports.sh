@@ -5,4 +5,5 @@
 8081- Default port for Sonatype Nexus Repository Manager (artifact storage for builds)
 9000- Default port for SonarQube web dashboard (code quality & security analysis)
 All Traffic- Allows all ports and protocols (0-65536)
+3306- The default port used by MySQL for database connections
 
