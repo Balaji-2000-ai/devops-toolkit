@@ -9,7 +9,7 @@ yum install maven -y: Installs Apache Maven, a build tool used to compile, packa
 mvn -v: Verifies Maven installation and shows the installed Maven version along with Java details
 mvn clean package: Cleans old build files and packages the application into a `.jar` or `.war` file, ready for deployment
 
-#Jenkins, Java, Ansible,Docker, httpd, nginx
+#Jenkins, Java, Ansible,Docker, httpd, nginx, Tomcat
 yum install java-17-amazon-corretto -y: Installs Amazon Corretto 17 (OpenJDK 17 distribution), required for tools like Jenkins and Spring Boot 3
 update-alternatives --config java: Switch between multiple installed Java versions and select the default version to use on the system
 /var/lib/jenkins: Default Jenkins home directory on Linux; contains jobs, plugins, credentials, and global configuration files
@@ -18,6 +18,9 @@ update-alternatives --config java: Switch between multiple installed Java versio
 /var/lib/docker/: Default storage location for Docker data including containers, images, volumes, networks, and build cache
 /usr/local/apache2/htdocs/: Default document root for Apache when running inside the official Docker `httpd` image
 /usr/share/nginx/html: Default document root for Nginx (both on Linux via yum/apt and in the official Nginx Docker image)
+usr/local/tomcat/webapps/: Default directory in a Tomcat container where web applications (WAR files or exploded app folders) are deployed and served
+
+
   
 
 
