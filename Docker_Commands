@@ -45,6 +45,14 @@ docker run -itd --name container --network network_name image_name: Creates a ne
 docker network connect network_name container_name: Connects an existing container to a specified Docker network without restarting the container
 
 
+docker run -itd --name cont-1 -v /mydevops ubuntu: Creates a new container and mounts the host directory /mydevops into the container at the same path for persistent storage and data sharing
+docker run -itd --name cont-2 --privileged=true --volumes-from cont-1 ubuntu: Creates a new container, grants it extended privileges, and mounts all volumes from cont-1, allowing both to share the same data volumes
+docker volume ls: Lists all Docker volumes, showing their names and associated drivers
+
+
+
+
+
 
 
 
