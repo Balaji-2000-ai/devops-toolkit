@@ -54,6 +54,8 @@ docker volume prune: Removes all unused Docker volumes that are not referenced b
 docker volume inspect volume_name: Displays detailed information about the specified Docker volume, including its mount point, driver, labels, and usage details
 docker run -itd --name cont-99 -p 9999:80 -v $(pwd):/usr/share/nginx/html/ nginx: Uses the -v option to mount the current host directory ($(pwd)) into the container at /usr/share/nginx/html/, allowing Nginx to serve content directly from the host filesystem
 docker run -itd --name cont-77 -p 7777:80 --mount source=Loka,destination=/usr/share/nginx/html/ nginx: Uses the --mount option to attach the Docker volume Loka to the container’s directory /usr/share/nginx/html/, allowing Nginx to serve content directly from the persistent volume
+docker run -d --name db_endpoint -p 1234:3306 image_name: Runs a database container in detached mode, mapping host port 1234 to the container’s 3306
+
 
 
 
