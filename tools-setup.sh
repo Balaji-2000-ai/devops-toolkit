@@ -19,6 +19,7 @@ update-alternatives --config java: Switch between multiple installed Java versio
 /usr/local/apache2/htdocs/: Default document root for Apache when running inside the official Docker `httpd` image
 /usr/share/nginx/html: Default document root for Nginx (both on Linux via yum/apt and in the official Nginx Docker image)
 usr/local/tomcat/webapps/: Default directory in a Tomcat container where web applications (WAR files or exploded app folders) are deployed and served
+docker-entrypoint-initdb.d/ → A special directory used by official database images (like MySQL) where initialization scripts (.sql files) are automatically executed when the container is first started to set up the database
 
 
   
