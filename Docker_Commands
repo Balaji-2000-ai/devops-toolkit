@@ -67,7 +67,7 @@ docker-compose stop: Stops all running containers defined in the docker-compose.
 docker-compose start: Starts previously created containers defined in the docker-compose.yml file that were stopped
 docker logs container_name: Displays the logs (stdout and stderr output) from the specified container, helping to troubleshoot or monitor its runtime behavior
 docker-compose logs: Displays aggregated logs from all containers defined in the docker-compose.yml file, allowing you to monitor output from multiple services in one view
-docker-compose config: Validates and displays the merged configuration from the docker-compose.yml file, showing the final effective configuration after processing variables and extensions
+docker-compose config: Validates and displays the merged configuration from the docker-compose.yml file
 
 
 
