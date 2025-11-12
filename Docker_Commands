@@ -79,7 +79,11 @@ docker service rm service_name: Removes the specified service from the Docker Sw
 docker service ps service_name: Displays the list of tasks (containers) running for the specified service in the Docker Swarm cluster, along with their node placement, status, and update information
 docker service create --name swiggy --publish 1111:80 --replicas 4 katukutibalaji/cycle: Creates a Docker Swarm service named swiggy with 4 replicas (containers) of the image katukutibalaji/cycle
 docker service update --image katukutibalaji/cycle Netflix: Updates the Netflix service in the Docker Swarm cluster to use the new image katukutibalaji/cycle, rolling out the update to all running replicas
-docker service rollback Netflix → Reverts the Netflix service in the Docker Swarm cluster to its previous image or configuration version, undoing the last update
+docker service rollback Netflix: Reverts the Netflix service in the Docker Swarm cluster to its previous image or configuration version, undoing the last update
+docker swarm join-token worker: Displays the command (including the token) that a node must run to join the existing Docker Swarm cluster as a Worker
+docker swarm join-token manager: Displays the command (including the token) that a node must run to join the existing Docker Swarm cluster as a Manager
+docker swarm leave: Removes/Downs the current node from the Docker Swarm cluster. If run on a Manager node, the node will stop managing the Swarm
+docker node rm worker_id: Removes the specified node from the Docker Swarm cluster. The node must be down before it can be removed if it’s a Manager or Worker
 
 
 
