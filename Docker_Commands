@@ -68,6 +68,7 @@ docker-compose start: Starts previously created containers defined in the docker
 docker logs container_name: Displays the logs (stdout and stderr output) from the specified container, helping to troubleshoot or monitor its runtime behavior
 docker-compose logs: Displays aggregated logs from all containers defined in the docker-compose.yml file, allowing you to monitor output from multiple services in one view
 docker-compose config: Validates and displays the merged configuration from the docker-compose.yml file
+docker-compose build: Builds or rebuilds the service images defined in the docker-compose.yml file, using the specified build contexts and Dockerfiles
 
 
 
