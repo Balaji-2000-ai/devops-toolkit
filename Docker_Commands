@@ -59,6 +59,19 @@ docker run -itd --name app-cont -p 1234:8080 --link devopsdb:mysqlcon app-image:
 mysql -u root -p: Starts the MySQL client and logs in using the root user
 
 
+docker-compose up -d: Creates containers defined in the docker-compose.yml file of present directory in detached mode, allowing them to run in the background
+docker-compose ps: Lists the status of all containers created by the current docker-compose.yml file
+docker-compose images: Displays all Docker images used by the services defined in the docker-compose.yml file, along with their tags and sizes
+docker-compose down: Stops and removes all containers, networks, and default resources created by docker-compose up. Volumes and images are preserved unless specified
+docker-compose stop: Stops all running containers defined in the docker-compose.yml file without removing them
+docker-compose start: Starts previously created containers defined in the docker-compose.yml file that were stopped
+docker logs container_name: Displays the logs (stdout and stderr output) from the specified container, helping to troubleshoot or monitor its runtime behavior
+docker-compose logs: Displays aggregated logs from all containers defined in the docker-compose.yml file, allowing you to monitor output from multiple services in one view
+docker-compose config: Validates and displays the merged configuration from the docker-compose.yml file, showing the final effective configuration after processing variables and extensions
+
+
+
+
 
 
 
