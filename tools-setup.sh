@@ -221,6 +221,16 @@ sudo pip3 install docker-compose
 docker-compose --version
 
 
+#Docker Swarm
+#All Nodes
+yum install docker -y && systemctl start docker
+#Manager Node
+docker swarm init
+#Worker Nodes: After initializing the Swarm, Docker provides a command (e.g., docker swarm join --token <token> <manager_ip>:2377) to be run on Worker nodes, allowing them to join the Swarm
+
+
+
+
 
 
 
