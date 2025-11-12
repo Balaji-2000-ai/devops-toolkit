@@ -200,6 +200,8 @@ systemctl status docker
 
 
 #Docker-Compose
+yum install docker -y
+systemctl start docker
 vim .bashrc
 export PATH=$PATH:/usr/local/bin/
 source .bashrc
