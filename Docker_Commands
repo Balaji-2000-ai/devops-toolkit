@@ -73,7 +73,7 @@ docker-compose build: Builds or rebuilds the service images defined in the docke
 #All commands in Manager Node
 docker node ls: Lists all nodes participating in the Docker Swarm cluster, showing their IDs, hostnames, roles (Manager/Worker), and current status
 docker service ls: Lists all services running in the Docker Swarm cluster, displaying their IDs, names, modes, replicas, and associated images
-docker service create --name paytm --publish 1234:80 katukutibalaji/cycle: Creates a new service named paytm in the Docker Swarm cluster, using the image katukutibalaji/cycle
+docker service create --name paytm --publish 1234:80 katukutibalaji/cycle: Creates a new service named paytm in the Docker Swarm cluster, using the image katukutibalaji/cycle (Image must be in DockerHub)
 docker service scale paytm=4: Adjusts the paytm service in the Docker Swarm cluster to run 4 replicas, automatically creating or removing containers to match the desired count (SCALE IN/OUT)
 docker service rm service_name: Removes the specified service from the Docker Swarm cluster, stopping all associated tasks and containers
 docker service ps service_name: Displays the list of tasks (containers) running for the specified service in the Docker Swarm cluster, along with their node placement, status, and update information
