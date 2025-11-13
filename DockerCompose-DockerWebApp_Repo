@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  db-service:
+    build: "./Docker-db"
+    container_name: devopsdb
+    ports:
+      - "5678:3306"
+
+  app-service:
+    build: "./Docker-app"
+    container_name: app-cont
+    ports:
+      - "1234:8080"
+    depends_on:
+      - db-service
+    links:
+      - db-service:mysqlcon
