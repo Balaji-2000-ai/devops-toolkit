@@ -1,0 +1,23 @@
+FROM node:16
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+EXPOSE 80
+#Alternate to npm start
+CMD ["node", "index.js"] 
+
+
+
+#ImageSizeReduction
+FROM node:19-alpine as mynodeimage 
+WORKDIR /app
+COPY package*.json .
+RUN npm install
+COPY . .
+EXPOSE 3000
+CMD ["node", "index.js"]
+
+FROM mynodeimage as reducedimage
+RUN npm install --production
+CMD npm start
