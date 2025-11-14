@@ -230,7 +230,7 @@ docker swarm init
 
 
 
-#Docker Stack
+#Docker Stack=Swarm+Compose
 vim .bashrc
 export PATH=$PATH:/usr/local/bin/
 source .bashrc
