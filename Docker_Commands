@@ -86,6 +86,9 @@ docker swarm leave: Removes/Downs the current node from the Docker Swarm cluster
 docker node rm worker_id: Removes the specified node from the Docker Swarm cluster. The node must be down before it can be removed if it’s a Manager or Worker
 
 
+docker stack deploy --compose-file=compose.yml flm: Deploys a Docker Stack flm using the services and configurations defined in compose.yml file, creating or updating all stack services in a Swarm environment
+docker stack ls: Lists all deployed Docker stacks in the Swarm cluster, showing their names and the number of services each stack contains
+docker stack ps flm: Displays the tasks (containers) running under the flm stack, including their node placement, current status, and replica information
 
 
 
