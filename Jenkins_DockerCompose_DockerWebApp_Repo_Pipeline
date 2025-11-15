@@ -1,0 +1,65 @@
+pipeline {
+    agent any
+    stages {
+        stage ("Clean Workspace") {
+            steps {
+                cleanWs()
+            }
+        }
+        stage ("Code from GitHub") {
+            steps {
+                git 'https://github.com/Balaji-2000-ai/dockerwebapp.git'
+            }
+        }
+        stage ("Code Quality Analysis") {
+            steps {
+                withSonarQubeEnv('Sonar') {
+                    sh "mvn clean verify sonar:sonar -Dsonar.projectKey=Docker-Project"
+                }
+            }
+        }
+        stage ("Quality Gates") {
+            steps {
+                waitForQualityGate abortPipeline: false, credentialsId: 'sonar-password'
+            }
+        }
+        stage ("Code Build") {
+            steps {
+                sh 'mvn clean package'
+                sh 'cp -r target Docker-app'
+            }
+        }
+        stage ("Artifactory Upload") {
+            steps {
+                nexusArtifactUploader artifacts: [[artifactId: 'vprofile', classifier: '', file: 'target/vprofile-v2.war', type: 'war']], credentialsId: 'Nexus', groupId: 'com.visualpathit', nexusUrl: '13.218.239.14:8081/', nexusVersion: 'nexus3', protocol: 'http', repository: 'docker-repo', version: 'v2'
+            }
+        }
+        stage ("Docker Images Creation") {
+            steps {
+                sh 'docker build -t db-image Docker-db'
+                sh 'docker build -t app-image Docker-app'
+            }
+        }
+        stage ("Trivy Image Scan") {
+            steps {
+                sh 'trivy image app-image'
+                sh 'trivy image db-image'
+            }
+        }
+        stage ('Push Image to DockerHub') {
+            steps {
+                withDockerRegistry([credentialsId: 'Docker-Hub-Credentials', url: 'https://index.docker.io/v1/']) {
+                    sh 'docker tag app-image katukutibalaji/dockerwebappapplication:version1'
+                    sh 'docker tag db-image katukutibalaji/dockerwebdbapplication:version1'
+                    sh 'docker push katukutibalaji/dockerwebappapplication:version1'
+                    sh 'docker push katukutibalaji/dockerwebdbapplication:version1'
+                }
+            }
+        }
+        stage ("Deployment") {
+            steps {
+                sh 'docker-compose up -d'
+            }
+        }
+    }
+}
