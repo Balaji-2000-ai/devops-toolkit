@@ -1,0 +1,74 @@
+pipeline {
+    agent any
+    tools {
+        jdk 'JDK17'
+        nodejs 'NodeJs'
+    }
+    environment {
+        SCANNER_HOME = tool 'Sonar'
+    }
+    stages {
+        stage ('Clean Job Workspace') {
+            steps {
+                cleanWs()
+            }
+        }
+        stage ('Get code from GitHub') {
+            steps {
+                git 'https://github.com/Balaji-2000-ai/Zomato-Project.git'
+            }
+        }
+        stage ('Code Quality Analysis') {
+            steps {
+                withSonarQubeEnv('Sonar') {
+                    sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=zomato \
+                    -Dsonar.projectKey=zomato '''
+                }
+            }
+        }
+        stage ('Quality Gateway') {
+            steps {
+                waitForQualityGate abortPipeline: false, credentialsId: 'SonarToken'
+            }
+        }
+        stage ('Install dependencies') {
+            steps {
+                sh 'npm install'
+            }
+        }
+        stage ('OWASP-Dependency Check') {
+            steps {
+                dependencyCheck additionalArguments: '--scan ./ --disableYarnAudit --disableNodeAudit', odcInstallation: 'Owasp'
+                dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
+            }
+        }
+        stage ('Trivy Setup') {
+            steps {
+                sh 'trivy fs . > trivyfs.txt'
+            }
+        }
+        stage ('Build Docker Image') {
+            steps {
+                sh 'docker build -t zomato_image .'
+            }
+        }
+        stage ('Docker Image Scan') {
+            steps {
+                sh 'trivy zomato_image'
+            }
+        }
+        stage ('Push Image to DockerHub') {
+            steps {
+                withDockerRegistry([credentialsId: 'Docker-Hub-Credentials', url: 'https://index.docker.io/v1/']) {
+                    sh 'docker tag zomato_image katukutibalaji/zomatoproject:version1'
+                    sh 'docker push katukutibalaji/zomatoproject:version1'
+                }
+            }
+        }
+        stage ('Containerization') {
+            steps {
+                sh 'docker run -itd --name Zomato-Container -p 3000:3000 katukutibalaji/zomatoproject:version1'
+            }
+        }
+    }
+}
