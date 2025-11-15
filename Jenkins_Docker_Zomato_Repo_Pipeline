@@ -1,7 +1,9 @@
+#Tools and variables names should be the match with the ones configuring in the Jenkins dashboard
+
 pipeline {
     agent any
     tools {
-        jdk 'JDK17'
+        jdk 'JDK17' 
         nodejs 'NodeJs'
     }
     environment {
