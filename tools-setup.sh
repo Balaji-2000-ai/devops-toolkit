@@ -169,7 +169,7 @@ sh sonar.sh start     # Start SonarQube
 
 
 
-# Ansible
+#Ansible
 #Master & Slave Servers
 
 passwd root  #Set Passwords
