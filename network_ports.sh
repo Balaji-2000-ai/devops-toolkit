@@ -6,6 +6,7 @@
 9000- Default port for SonarQube web dashboard (code quality & security analysis)
 3000- Commonly used by Node.js, React, Grafana, and various development servers
 9000- Commonly used by tools like Docker Portainer
+8000= Splunk runs its Web UI for browser-based access and management
 All Traffic- Allows all ports and protocols (0-65536)
 3306- The default port used by MySQL for database connections
 
