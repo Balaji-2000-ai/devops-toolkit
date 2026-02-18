@@ -45,7 +45,7 @@ free : Displays RAM usage
 free -m : Displays RAM usage in MB
 df -h : Shows EBS Volume usage
 fdisk -l: Lists all available disk drives and their partitions on the system
-
+top: lscpu + free + ps (live, updating every second)
 
 # File Commands
 cat : Reads file data
