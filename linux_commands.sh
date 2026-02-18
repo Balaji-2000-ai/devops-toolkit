@@ -32,8 +32,8 @@ cal 2026 : gets specific year's calendar
 cal 8 2028 : gets specific month's calendar in a year
 who : Lists connected users
 whoami : Shows current user
-ps : Lists running processors
-kill -9 PID : used to kill a processor
+ps : Lists running processes
+kill -9 PID : used to kill a process
 history : Shows the linux commands performed
 
 
