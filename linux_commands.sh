@@ -60,6 +60,7 @@ tail -8 filename : Displays the last 8 lines of the file
 sed -n '5,17p' filename : Displays lines from line 5 to 17 from the file
 sed -n '3p' filename : Prints only line number 3 from the file
 sed -i '1d;$d' filename: Deletes the first and last line of a file
+sed '1d;$d' filename: Prints file data by deleting first and last line. Original file is not changed unless -i used
 touch : Creates a file
 ll or ll -l : Lists files alphabetically with detailed information
 ll -r : Lists files in reverse order
