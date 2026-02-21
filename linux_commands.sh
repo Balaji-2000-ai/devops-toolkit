@@ -58,7 +58,8 @@ head -5 filename : Displays the first 5 lines of the file
 tail filename : Displays the last 10 lines of the file by default
 tail -8 filename : Displays the last 8 lines of the file
 sed -n '5,17p' filename : Displays lines from line 5 to 17 from the file
-sed -n '3p' filename : Prints only line number 3 from the file  
+sed -n '3p' filename : Prints only line number 3 from the file
+sed -i '1d;$d' filename: Deletes the first and last line of a file
 touch : Creates a file
 ll or ll -l : Lists files alphabetically with detailed information
 ll -r : Lists files in reverse order
