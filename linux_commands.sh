@@ -34,7 +34,7 @@ who : Lists connected users
 last -F: Shows Login history (past + current sessions)
 whoami : Shows current user
 ps : Lists running processes
-kill -9 PID : used to kill a process
+kill -9 PID : used to forcefully kill a process (SIGKILL Signal)
 history : Shows the linux commands performed
 
 
