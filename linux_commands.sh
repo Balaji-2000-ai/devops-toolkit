@@ -31,6 +31,7 @@ cal : gets calendar
 cal 2026 : gets specific year's calendar
 cal 8 2028 : gets specific month's calendar in a year
 who : Lists connected users
+last -F: Shows Login history (past + current sessions)
 whoami : Shows current user
 ps : Lists running processes
 kill -9 PID : used to kill a process
