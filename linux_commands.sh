@@ -103,7 +103,7 @@ mkdir -p folder1/folder2 : Creates parent and subdirectories at once (no error i
 
 
 # Cat, Copy, Move Commands
-cat > filename : Overwrites file content  
+cat > filename : Overwrites file content, Ctrl+D on a new line to save content  
 cat >> filename : Appends data to the file
 cat source >> destination : Appends source content to destination (no overwrite)
 cp source destination : Copies file/folder (overwrites if destination has data)
