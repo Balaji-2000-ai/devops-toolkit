@@ -186,6 +186,9 @@ wget: Command-line tool to download files from the internet; commonly used to fe
 tar -zxvf <file>.tar.gz: Extracts a `.tar.gz` (gzip compressed) archive
 unzip filename.zip: Linux command used to extract files from a .zip archive
 
+.tar.gz or .tgz	filetype: tar -zxvf file.tar.gz
+.zip filetype:	unzip file.zip
+
 
 
 
